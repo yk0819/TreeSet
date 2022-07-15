@@ -1,0 +1,47 @@
+import java.util.Comparator;
+import java.util.TreeSet;
+
+class MyComparator implements Comparator<String> {
+
+	@Override
+	public int compare(String str1, String str2) {
+//		return str1.compareTo(str2); // 오름차순
+		return str1.compareTo(str2) * (-1); // 오름차순
+	}
+	
+}
+
+public class MemberTreeSetTest {
+
+	public static void main(String[] args) {
+		
+//		TreeSet<String> set = new TreeSet<String>();
+//		
+//		set.add("hirona");
+//		set.add("miku");
+//		set.add("rie");
+//		set.add("akari");
+//		System.out.println(set);
+		
+//		MemberTreeSet memberTreeSet = new MemberTreeSet();
+//		
+//		Member memberUnjo = new Member(809, "運上弘菜");
+//		Member memberTanaka = new Member(912, "田中美久");
+//		Member memberKitahara = new Member(624, "北原里英");
+//		Member memberSakai = new Member(624, "堺萌香");
+//		
+//		memberTreeSet.addMember(memberUnjo);
+//		memberTreeSet.addMember(memberTanaka);
+//		memberTreeSet.addMember(memberKitahara);
+//		memberTreeSet.addMember(memberSakai);
+//		
+//		memberTreeSet.showAllMember();
+		
+		TreeSet<String>set = new TreeSet<String>(new MyComparator());
+		set.add("hirona");
+		set.add("lee");
+		set.add("kitahara");
+		
+		System.out.println(set); // 오름차순
+	}
+}
